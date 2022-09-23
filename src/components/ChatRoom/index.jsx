@@ -1,3 +1,4 @@
+import { MessageInput } from '../MessageInput';
 import { Link, useParams } from 'react-router-dom';
 import { chatRooms } from '../../data/chatRooms';
 import './styles.css';
@@ -17,7 +18,7 @@ function ChatRoom() {
                 <Link to="/">⬅️ Back to all rooms</Link>
             </div>
             <div className="messages-container">
-                                {/* TODO */}
+                <MessageInput roomId={room.id} />
             </div>
         </>
     );

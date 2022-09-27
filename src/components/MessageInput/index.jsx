@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import { sendMessage } from '../../services/firebase';
+import InputEmoji from 'react-input-emoji';
 import './styles.css';
 
 function MessageInput({ roomId }) {
@@ -17,9 +18,10 @@ function MessageInput({ roomId }) {
         setValue('');
     };
 
+
     return (
         <form onSubmit={handleSubmit} className="message-input-container">
-            <input
+            <InputEmoji
                 type="text"
                 placeholder="Enter a message"
                 value={value}

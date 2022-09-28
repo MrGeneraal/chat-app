@@ -8,8 +8,8 @@ function MessageInput({ roomId }) {
     const { user } = useAuth();
     const [value, setValue] = React.useState('');
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const handleChange = (value) => {
+        setValue(value);
     };
 
     const handleSubmit = (event) => {

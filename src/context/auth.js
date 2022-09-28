@@ -11,6 +11,7 @@ const AuthProvider = (props) => {
 
         if (!user) {
             // TODO: Handle failed login
+            return <p>Login failed</p>
         }
 
         setUser(user);

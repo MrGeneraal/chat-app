@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
@@ -60,10 +59,23 @@ async function loginWithGoogle() {
   }
 }
 
+async function loginWithGithub() {
+    try {
+        const provider = new GithubAuthProvider();
+        const auth = getAuth();
+
+        const { user } = await signInWithPopup(auth, provider);
+
+        return { uid: user.uid, displayName: user.displayName };
+    } catch (error) {
+        if (error.code !== 'auth/cancelled-popup-request') {
+            console.error(error);
+        }
+    };
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 

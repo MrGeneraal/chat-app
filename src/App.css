@@ -8,8 +8,8 @@ html {
   --color-gray: hsl(210, 3%, 25%);
   --color-white: white;
   --border-radius: 5px;
-  background-color: var(--color-background);
-  color: var(--color-white);
+  background-color: #a7bcff;
+  color: black;
 }
 
 html,
@@ -49,13 +49,10 @@ button {
 }
 
 .container {
-  height: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 32px;
+  /*margin: 30px;*/
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
 }

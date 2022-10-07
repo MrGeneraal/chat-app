@@ -8,7 +8,6 @@ function App() {
 
     return (
         <div className="container">
-            <h1>💬 Chat Room</h1>
             {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
         </div>
     );

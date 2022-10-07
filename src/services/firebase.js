@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-EYWPBWPNNQ"
 };
 
-async function sendMessage(roomId, user, text) {
+export async function sendMessage(roomId, user, text) {
   try {
       await addDoc(collection(db, 'chat-rooms', roomId, 'messages'), {
           uid: user.uid,
@@ -26,7 +26,7 @@ async function sendMessage(roomId, user, text) {
   }
 }
 
-function getMessages(roomId, callback) {
+export function getMessages(roomId, callback) {
   return onSnapshot(
       query(
           collection(db, 'chat-rooms', roomId, 'messages'),
@@ -42,7 +42,23 @@ function getMessages(roomId, callback) {
   );
 }
 
-async function loginWithGoogle() {
+export function getRooms(callback) {
+    return onSnapshot(
+        query(
+            collection(db, 'chat-rooms')
+        ),
+        (querySnapshot) => {
+            const rooms = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+
+            callback(rooms);
+        }
+    );
+}
+
+export async function loginWithGoogle() {
   try {
       const provider = new GoogleAuthProvider();
       const auth = getAuth();
@@ -59,24 +75,6 @@ async function loginWithGoogle() {
   }
 }
 
-async function loginWithGithub() {
-    try {
-        const provider = new GithubAuthProvider();
-        const auth = getAuth();
-
-        const { user } = await signInWithPopup(auth, provider);
-
-        return { uid: user.uid, displayName: user.displayName };
-    } catch (error) {
-        if (error.code !== 'auth/cancelled-popup-request') {
-            console.error(error);
-        }
-    };
-}
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-
-export { loginWithGoogle, sendMessage, getMessages };

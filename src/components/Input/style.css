@@ -1,0 +1,64 @@
+.input {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 50px;
+    background-color: white;
+} .input img {
+      height: 30px;
+      cursor: pointer;
+  }
+
+.message-input {
+    padding: 12px 8px;
+    flex: 1;
+    background: var(--color-gray);
+    border-radius: var(--border-radius);
+    border: black;
+    z-index: 0;
+    word-break: break-word;
+    max-width: 100%;
+}
+.react-input-emoji--placeholder {
+    z-index: auto!important;
+}
+
+.react-input-emoji--container {
+    width: 0!important;
+}
+
+.react-emoji-picker--container {
+    right: -138px;
+}
+
+.send {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons.hidden {
+    display: none;
+}
+
+.send-message {
+    margin-right: 4px;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    background-color: #5d5b8d;
+    cursor: pointer;
+    transition: all .1s
+} .send-message:hover {
+      box-shadow: 0 15px 25px -5px;
+      transform: scale(1.03)
+  }.send-message:active {
+         box-shadow: 0 4px 8px;
+         transform: scale(.98);
+     }

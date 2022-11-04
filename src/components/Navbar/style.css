@@ -1,0 +1,57 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #2f2d52;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    color: #ddddf7;
+}
+
+.logo {
+    font-weight: bold;
+    width: 50%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image {
+    background-color: #ddddf7;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.button {
+    background-color: #ba110c;
+    color: #ddddf7;
+    font-size: 13px;
+    border: none;
+    padding: 5px;
+    transition: all .1s
+} .button:hover {
+      transform: scale(1.03)
+  }.button:active {
+       transform: scale(.98);
+   }
+
+@media screen and (max-width: 1200px) {
+    .logo {
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 60%;
+    }
+}

@@ -40,19 +40,9 @@ button {
   cursor: pointer;
 }
 
-input,
 button {
   font-size: 1rem;
   color: inherit;
   border: none;
   border-radius: var(--border-radius);
-}
-
-.container {
-  /*margin: 30px;*/
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

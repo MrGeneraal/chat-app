@@ -11,10 +11,17 @@ import {ChatContext} from "../../context/ChatContext";
 function Chat(props) {
     const { data } = useContext(ChatContext);
 
-    if (data === null) {
+    if (data.chatId === null) {
         return (
-            <div>
-                Choose a chat to start the conversation
+            <div className="default">
+                <div className="chatInfo">
+                    <button onClick={props.toggleSidebar} className="sidebar-toggle">
+                        ☰
+                    </button>
+                </div>
+                <div className="statement">
+                    Choose a chat or find a user to start the conversation
+                </div>
             </div>
         )
     }

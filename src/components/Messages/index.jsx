@@ -20,14 +20,6 @@ function MessageList() {
         };
     }, [data.chatId]);
 
-    // if (messages < 0) {
-    //     return (
-    //         <div>
-    //             Choose a chat to start the conversation
-    //         </div>
-    //     )
-    // }
-
     return (
         <div className="messages">
             {messages.map((m) => (

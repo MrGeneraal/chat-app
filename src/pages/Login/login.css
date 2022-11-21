@@ -1,0 +1,62 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.fromWrapper {
+    display: contents;
+}
+
+.registerLink {
+    color: #7b96ec;
+}
+
+.login-button {
+    background: #7b96ec;
+    color: white;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+.google {
+    background: #5d5b8d;
+    color: white;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+.loginInput input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border: none;
+    width: 250px;
+    border-bottom: 1px solid #a7bcff;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    color: #5d5b8d;
+}
+
+a {
+    color: blue!important;
+}

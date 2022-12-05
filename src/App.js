@@ -1,6 +1,7 @@
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/login";
 import Register from "./pages/Register/register";
+import Settings from "./pages/Settings/settings";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import React, {useContext} from "react";
 import {AuthContext} from "./context/AuthContext";
@@ -31,6 +32,7 @@ function App() {
                     />
                     <Route path="login" element={<Login />} />
                     <Route path="register" element={<Register />} />
+                    <Route path="settings" element={<Settings />} />
                 </Route>
             </Routes>
         </BrowserRouter>

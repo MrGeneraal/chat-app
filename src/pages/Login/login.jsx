@@ -75,7 +75,7 @@ function Login() {
         <div className="loginWrapper">
             <div className="loginContainer">
                 <img src="https://see.fontimg.com/api/renderfont4/2OOLW/eyJyIjoiZnMiLCJoIjo4MCwidyI6MTAwMCwiZnMiOjgwLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TW9qaUNoYXQ/san-marino-beach.png" alt="3D fonts" style={{width: "50%"}}/>
-            <h2 className="title">Log in to join a chat room!</h2>
+                <h2 className="title">Log in to join a chat room!</h2>
                 <div className="fromWrapper">
                     <form onSubmit={handleSubmit} className="form">
                         <div className="loginInput">

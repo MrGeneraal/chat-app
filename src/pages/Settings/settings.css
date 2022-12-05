@@ -1,0 +1,16 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.settings-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

@@ -50,7 +50,7 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     overflow-x: hidden;
-    height: calc(100% - 110px - 41px);
+    height: calc(100% - 120px - 41px);
 }
 
 .chats::-webkit-scrollbar {
@@ -63,8 +63,8 @@
     }
 }
 
-/*@media screen and (max-width: 480px) {*/
-/*    .chats {*/
-/*        height: 78%;*/
-/*    }*/
-/*}*/
+@media screen and (max-width: 480px) {
+    .chats {
+        height: calc(100% - 105px - 41px);
+    }
+}
